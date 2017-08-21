@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:HamburgerMenu.ExtensionMarkup"
+    Title="{Binding Title}"
+    x:Class="HamburgerMenu.Views.LoginPage"
+    BackgroundColor="#FFF">
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ScrollView>
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <StackLayout Padding="30" Spacing="50" HorizontalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Image Source="{local:EmbeddedImage ResourceId=HamburgerMenu.Images.logo_login_mv.png}" Margin="30" HeightRequest="200" />
+                        <Label Text="Bem-vindo" TextColor="{StaticResource colorPrimary}" FontSize="Small" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Entry Text="{Binding UserName}" Placeholder="Usuario" HorizontalOptions="FillAndExpand" TextColor="Gray" />
+                        <Entry Text="{Binding Password}" IsPassword="true" Placeholder="Senha" VerticalOptions="StartAndExpand" TextColor="Gray" />
+                        <StackLayout>
+                            <Button Text="LOG IN" Style="{StaticResource buttonPrimary}" Command="{Binding LoginCommand}"  HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+
+    </AbsoluteLayout>
+
+</ContentPage>
