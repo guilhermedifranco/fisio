@@ -2,12 +2,68 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="{Binding Title}"
+    Title="Atendimento"
+    BackgroundColor="White"
     x:Class="HamburgerMenu.Views.ViewB">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Logout" Command="{Binding LogoutCommand}" />
     </ContentPage.ToolbarItems>
-    <StackLayout BackgroundColor="Fuchsia">
-        <Label Text="{Binding Message}" />
+    <StackLayout BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Start">
+        <Label Text="Nome do Cliente"/>
+        <Entry x:Name="atdCliente"/>
+        <Label Text="Responsavel"/>
+        <Picker x:Name="picResponsavel">
+            <Picker.Title>
+                <x:String>
+                    Clique para definir o responsável
+                </x:String>
+            </Picker.Title>
+            <Picker.Items>
+                <x:String>Responsavel1</x:String>
+                <x:String>Responsavel2</x:String>
+                <x:String>Responsavel3</x:String>
+                <x:String>Responsavel4</x:String>
+                <x:String>Irresponsavel</x:String>
+            </Picker.Items>
+        </Picker>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                <DatePicker x:Name="atdDia"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Picker x:Name="atdHora">
+                    <Picker.Title>
+                        <x:String>
+                            Horário
+                        </x:String>
+                    </Picker.Title>
+                    <Picker.Items>
+                        <x:String>8:00</x:String>
+                        <x:String>13:00</x:String>
+                        <x:String>17:00</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+        </StackLayout>
+        <Picker>
+            <Picker.Title>
+                <x:String>
+                    Clique para definir o aparelho
+                </x:String>
+            </Picker.Title>
+            <Picker.Items>
+                <x:String>Aparelho 1</x:String>
+                <x:String>Aparelho 2</x:String>
+                <x:String>Aparelho 3</x:String>
+            </Picker.Items>
+        </Picker>
+        <StackLayout VerticalOptions="End" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                <Button x:Name="btnConfirmar" Text="Confirmar"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Button x:Name="btnCancelar" Text="Cancelar"/>
+            </StackLayout>
+        </StackLayout>
     </StackLayout>
 </ContentPage>
